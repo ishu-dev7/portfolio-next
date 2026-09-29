@@ -25,13 +25,13 @@ const CATEGORY_COLORS: Record<string, { card: string; chip: string; icon: string
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative overflow-hidden py-28">
+    <section id="skills" className="relative overflow-hidden py-24">
       <TechBackground connectDist={120} />
       <div className="pointer-events-none absolute -right-40 top-10 h-80 w-80 rounded-full bg-brand-purple/8 blur-[110px]" />
       <div className="pointer-events-none absolute -left-40 bottom-10 h-80 w-80 rounded-full bg-brand-cyan/6 blur-[110px]" />
 
       <div className="relative mx-auto max-w-wrap px-7">
-        <Reveal className="mb-16 max-w-xl">
+        <Reveal className="mb-12 max-w-xl">
           <div className="mb-3.5 flex items-center font-mono text-sm text-brand-cyan section-label">
             SKILLS
           </div>

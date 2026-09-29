@@ -4,7 +4,7 @@ import { STATS } from "@/constants/data";
 
 export default function Statistics() {
   return (
-    <section id="statistics" className="py-16">
+    <section id="statistics" className="py-20">
       <div className="mx-auto max-w-wrap px-7">
         <Reveal>
           <div className="relative overflow-hidden rounded-2xl border border-brand-purple/20 bg-gradient-to-br from-brand-purple/10 via-surface to-brand-blue/10 p-10 md:p-12">

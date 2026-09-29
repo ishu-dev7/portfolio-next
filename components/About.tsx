@@ -1,21 +1,11 @@
 import Reveal from "./Reveal";
-import Counter from "./Counter";
 import AboutCarousel from "./AboutCarousel";
 import TechBackground from "./TechBackground";
-import { ABOUT_COUNTERS, ABOUT_HIGHLIGHTS } from "@/constants/data";
-
-const COUNTER_ACCENTS = [
-  "from-brand-purple to-brand-blue",
-  "from-brand-blue to-indigo-400",
-  "from-brand-cyan to-brand-blue",
-  "from-sky-400 to-brand-cyan",
-  "from-emerald-400 to-brand-cyan",
-  "from-brand-purple to-brand-cyan",
-];
+import { ABOUT_STATS, ABOUT_HIGHLIGHTS } from "@/constants/data";
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden py-28">
+    <section id="about" className="relative overflow-hidden py-24">
       {/* Dynamic background */}
       <TechBackground connectDist={130} />
       <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-brand-purple/10 blur-[100px]" />
@@ -69,21 +59,19 @@ export default function About() {
               ))}
             </ul>
 
-            {/* Counters */}
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {ABOUT_COUNTERS.map((c, idx) => (
+            {/* Stats — static values (no animated counter flicker) */}
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {ABOUT_STATS.map((s) => (
                 <div
-                  key={c.label}
+                  key={s.label}
                   className="group relative overflow-hidden rounded-xl border border-border bg-surface transition-all duration-200 hover:border-brand-purple/40 hover:-translate-y-0.5 hover:shadow-[0_6px_24px_-8px_rgba(124,92,255,0.25)]"
                 >
-                  <div className={`h-[3px] w-full bg-gradient-to-r ${COUNTER_ACCENTS[idx % COUNTER_ACCENTS.length]}`} />
+                  <div className={`h-[3px] w-full bg-gradient-to-r ${s.color}`} />
                   <div className="px-4 py-4">
-                    <Counter
-                      target={c.target}
-                      suffix="+"
-                      className="grad-text font-display text-2xl font-bold"
-                    />
-                    <div className="mt-1 text-xs font-medium leading-snug text-text/65">{c.label}</div>
+                    <div className="grad-text font-display text-2xl font-bold">
+                      {s.value}{s.suffix}
+                    </div>
+                    <div className="mt-1 text-xs font-medium leading-snug text-text/65">{s.label}</div>
                   </div>
                 </div>
               ))}

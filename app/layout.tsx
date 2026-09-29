@@ -27,21 +27,24 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: `${SITE.name} — ${SITE.title}`,
   description:
-    "Senior .NET Full Stack Engineer specializing in enterprise backend systems, SQL Server performance, and AI integration.",
+    "Software Developer with 3 years building enterprise .NET applications, optimizing SQL Server, and integrating AI into production systems. Based in Indore, India.",
   keywords: [
     ".NET Developer",
+    "ASP.NET Core",
     "C# Developer",
     "Angular Developer",
-    "Full Stack Engineer",
-    "SQL Server",
+    "Full Stack Developer",
+    "SQL Server Performance",
+    "Azure OpenAI",
     "AI Integration",
-    "Technical Lead",
+    "Backend Specialist",
+    "Enterprise SaaS",
   ],
   authors: [{ name: SITE.name }],
   openGraph: {
     title: `${SITE.name} — ${SITE.title}`,
     description:
-      "Senior .NET Full Stack Engineer specializing in enterprise backend systems, SQL Server performance, and AI integration.",
+      "Software Developer with 3 years building enterprise .NET applications, optimizing SQL Server, and integrating AI into production systems. Based in Indore, India.",
     url: SITE_URL,
     siteName: `${SITE.name} Portfolio`,
     type: "website",
@@ -51,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE.name} — ${SITE.title}`,
     description:
-      "Senior .NET Full Stack Engineer specializing in enterprise backend systems, SQL Server performance, and AI integration.",
+      "Software Developer with 3 years building enterprise .NET applications, optimizing SQL Server, and integrating AI into production systems. Based in Indore, India.",
     images: ["/og-image.png"],
   },
 };

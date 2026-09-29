@@ -1,5 +1,6 @@
 import { Server, Code2, Webhook, Database, Brain, MessageSquare } from "lucide-react";
 import Reveal from "./Reveal";
+import TechBackground from "./TechBackground";
 import { SERVICES } from "@/constants/data";
 
 const SERVICE_ICONS = [Server, Code2, Webhook, Database, Brain, MessageSquare];
@@ -15,9 +16,10 @@ const SERVICE_COLORS = [
 
 export default function Services() {
   return (
-    <section id="services" className="pt-28 pb-16">
-      <div className="mx-auto max-w-wrap px-7">
-        <Reveal className="mb-16 max-w-xl">
+    <section id="services" className="relative overflow-hidden py-24">
+      <TechBackground connectDist={125} />
+      <div className="relative mx-auto max-w-wrap px-7">
+        <Reveal className="mb-12 max-w-xl">
           <div className="mb-3.5 flex items-center font-mono text-sm text-brand-cyan section-label">
             WHAT I BRING
           </div>

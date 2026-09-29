@@ -17,14 +17,14 @@ const ICONS = [
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="relative py-28 overflow-hidden">
+    <section id="achievements" className="relative py-24 overflow-hidden">
       {/* Background graphics */}
       <TechBackground connectDist={110} />
       <div className="pointer-events-none absolute -right-40 top-20 h-80 w-80 rounded-full bg-yellow-400/5 blur-[100px]" />
       <div className="pointer-events-none absolute -left-40 bottom-20 h-80 w-80 rounded-full bg-brand-purple/8 blur-[100px]" />
 
       <div className="mx-auto max-w-wrap px-7">
-        <Reveal className="mb-16 max-w-xl">
+        <Reveal className="mb-12 max-w-xl">
           <div className="mb-3.5 flex items-center font-mono text-sm text-brand-cyan section-label">
             ACHIEVEMENTS
           </div>

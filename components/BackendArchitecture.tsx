@@ -50,8 +50,6 @@ export default function BackendArchitecture() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
     let raf: number;
     let packets: Packet[] = [];
     let nodes: Array<ArchNode & { cx: number; cy: number }> = [];
@@ -113,7 +111,6 @@ export default function BackendArchitecture() {
         const b = getNode(toId);
         if (!a || !b) return;
 
-        // Dashed connection line
         ctx!.save();
         ctx!.setLineDash([4, 8]);
         ctx!.strokeStyle = "rgba(255,255,255,0.07)";
@@ -137,7 +134,6 @@ export default function BackendArchitecture() {
         const x = a.cx + (b.cx - a.cx) * p.t;
         const y = a.cy + (b.cy - a.cy) * p.t;
 
-        // Glow
         const g = ctx!.createRadialGradient(x, y, 0, x, y, p.size * 3);
         g.addColorStop(0, p.color + "cc");
         g.addColorStop(1, "transparent");
@@ -146,7 +142,6 @@ export default function BackendArchitecture() {
         ctx!.arc(x, y, p.size * 3, 0, Math.PI * 2);
         ctx!.fill();
 
-        // Core dot
         ctx!.fillStyle = p.color;
         ctx!.beginPath();
         ctx!.arc(x, y, p.size, 0, Math.PI * 2);
@@ -158,7 +153,6 @@ export default function BackendArchitecture() {
         const pulse = 1 + 0.06 * Math.sin(tick * 0.025 + n.fx * 10);
         const r = n.r * pulse;
 
-        // Outer glow ring
         const outerGlow = ctx!.createRadialGradient(n.cx, n.cy, r * 0.8, n.cx, n.cy, r * 2.5);
         outerGlow.addColorStop(0, n.color + "22");
         outerGlow.addColorStop(1, "transparent");
@@ -167,24 +161,20 @@ export default function BackendArchitecture() {
         ctx!.arc(n.cx, n.cy, r * 2.5, 0, Math.PI * 2);
         ctx!.fill();
 
-        // Hexagon fill
         drawHexagon(n.cx, n.cy, r);
         ctx!.fillStyle = n.color + "18";
         ctx!.fill();
 
-        // Hexagon border
         drawHexagon(n.cx, n.cy, r);
         ctx!.strokeStyle = n.color + "55";
         ctx!.lineWidth = 1.5;
         ctx!.stroke();
 
-        // Inner hexagon
         drawHexagon(n.cx, n.cy, r * 0.55);
         ctx!.strokeStyle = n.color + "88";
         ctx!.lineWidth = 1;
         ctx!.stroke();
 
-        // Label
         ctx!.fillStyle = n.color + "cc";
         ctx!.font = "bold 10px 'JetBrains Mono', monospace";
         ctx!.textAlign = "center";

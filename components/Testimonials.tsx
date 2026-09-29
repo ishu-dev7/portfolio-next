@@ -1,11 +1,13 @@
 import Reveal from "./Reveal";
+import TechBackground from "./TechBackground";
 import { TESTIMONIALS } from "@/constants/data";
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="pt-28 pb-16">
-      <div className="mx-auto max-w-wrap px-7">
-        <Reveal className="mb-16 max-w-xl">
+    <section id="testimonials" className="relative overflow-hidden py-24">
+      <TechBackground connectDist={120} />
+      <div className="relative mx-auto max-w-wrap px-7">
+        <Reveal className="mb-12 max-w-xl">
           <div className="mb-3.5 flex items-center font-mono text-sm text-brand-cyan section-label">
             TESTIMONIALS
           </div>

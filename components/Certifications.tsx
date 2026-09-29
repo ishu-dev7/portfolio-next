@@ -1,5 +1,6 @@
 import { Cloud, Hash, Database, Sparkles, Triangle, Clock, Coffee, Zap, CheckCircle2, Loader2 } from "lucide-react";
 import Reveal from "./Reveal";
+import TechBackground from "./TechBackground";
 import { CERTIFICATIONS } from "@/constants/data";
 
 const CERT_ICONS = [Cloud, Hash, Database, Sparkles, Triangle, Coffee, Zap];
@@ -40,7 +41,8 @@ function StatusBadge({ status }: { status: string }) {
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="relative pt-20 pb-8 overflow-hidden">
+    <section id="certifications" className="relative py-20 overflow-hidden">
+      <TechBackground connectDist={110} />
       {/* Background */}
       <div className="pointer-events-none absolute -right-32 top-10 h-64 w-64 rounded-full bg-brand-cyan/5 blur-[90px]" />
 
@@ -57,7 +59,7 @@ export default function Certifications() {
           </p>
         </Reveal>
 
-        <Reveal className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <Reveal className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {CERTIFICATIONS.map((cert, i) => {
             const Icon  = CERT_ICONS[i % CERT_ICONS.length];
             const color = CERT_COLORS[i % CERT_COLORS.length];

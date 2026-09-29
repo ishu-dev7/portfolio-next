@@ -1,9 +1,11 @@
 import { Download, FileText } from "lucide-react";
 import Reveal from "./Reveal";
+import TechBackground from "./TechBackground";
 
 export default function Resume() {
   return (
-    <section id="resume" className="relative overflow-hidden pt-16 pb-24">
+    <section id="resume" className="relative overflow-hidden py-20">
+      <TechBackground connectDist={115} />
       {/* Background */}
       <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-brand-purple/8 blur-[100px]" />
       <div className="pointer-events-none absolute -right-32 bottom-10 h-72 w-72 rounded-full bg-brand-cyan/6 blur-[100px]" />
@@ -59,7 +61,7 @@ export default function Resume() {
                 {/* Highlights */}
                 <ul className="mb-8 grid gap-2">
                   {[
-                    "~3 years enterprise .NET development",
+                    "3 years enterprise .NET development",
                     "Technical lead & AI integration experience",
                     "SQL Server optimization & production deployments",
                     "Angular frontend + backend full-stack delivery",

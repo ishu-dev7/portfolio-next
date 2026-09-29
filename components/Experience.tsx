@@ -5,10 +5,10 @@ import { EXPERIENCE } from "@/constants/data";
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative overflow-hidden py-28">
+    <section id="experience" className="relative overflow-hidden py-24">
       <TechBackground connectDist={120} />
       <div className="relative mx-auto max-w-wrap px-7">
-        <Reveal className="mb-16 max-w-xl">
+        <Reveal className="mb-12 max-w-xl">
           <div className="mb-3.5 flex items-center font-mono text-sm text-brand-cyan section-label">
             EXPERIENCE
           </div>

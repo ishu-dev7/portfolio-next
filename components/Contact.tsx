@@ -44,22 +44,23 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative overflow-hidden py-28">
+    <section id="contact" className="relative overflow-hidden py-24">
       <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-brand-purple/10 blur-[100px]" />
       <div className="pointer-events-none absolute -right-24 bottom-10 h-72 w-72 rounded-full bg-brand-cyan/8 blur-[100px]" />
       <div className="pointer-events-none absolute inset-0 dot-grid opacity-20" />
 
       <div className="relative mx-auto max-w-wrap px-7">
-        <Reveal className="mb-14 max-w-xl">
+        <Reveal className="mb-12 max-w-xl">
           <div className="mb-3.5 flex items-center font-mono text-sm text-brand-cyan section-label">
             CONTACT
           </div>
           <h2 className="font-display text-3xl font-semibold md:text-4xl">
-            Let&apos;s talk about your project.
+            Let&apos;s Build Something Meaningful.
           </h2>
           <p className="mt-3.5 text-base text-muted">
-            Open to freelance projects, full-time roles, and technical consultations.
-            I typically respond within 24 hours.
+            Looking to bring on a .NET backend specialist, full stack developer,
+            or AI integration engineer? Open to full-time roles, contracts, and
+            technical consultations. I typically respond within 24 hours.
           </p>
         </Reveal>
 

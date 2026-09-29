@@ -1,5 +1,6 @@
 import { GraduationCap, Briefcase, Code2, BookOpen, TrendingUp } from "lucide-react";
 import Reveal from "./Reveal";
+import TechBackground from "./TechBackground";
 import { JOURNEY } from "@/constants/data";
 
 const STEP_ICONS  = [GraduationCap, Code2, Briefcase, BookOpen, TrendingUp];
@@ -13,12 +14,13 @@ const STEP_COLORS = [
 
 export default function Journey() {
   return (
-    <section id="journey" className="relative overflow-hidden pt-20 pb-12">
+    <section id="journey" className="relative overflow-hidden py-20">
+      <TechBackground connectDist={115} />
       <div className="pointer-events-none absolute inset-0 dot-grid opacity-20" />
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-60 w-60 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-blue/8 blur-[80px]" />
 
       <div className="relative mx-auto max-w-wrap px-7">
-        <Reveal className="mb-14 max-w-xl">
+        <Reveal className="mb-12 max-w-xl">
           <div className="mb-3.5 flex items-center font-mono text-sm text-brand-cyan section-label">
             DEVELOPMENT JOURNEY
           </div>

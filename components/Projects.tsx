@@ -120,13 +120,13 @@ export default function Projects() {
   const visible = filter === "all" ? PROJECTS : PROJECTS.filter((p) => p.category === filter);
 
   return (
-    <section id="projects" className="relative overflow-hidden py-28">
+    <section id="projects" className="relative overflow-hidden py-24">
       <TechBackground connectDist={125} />
       <div className="pointer-events-none absolute left-0 top-1/3 h-96 w-96 rounded-full bg-brand-blue/6 blur-[120px]" />
       <div className="pointer-events-none absolute right-0 bottom-1/3 h-96 w-96 rounded-full bg-brand-purple/6 blur-[120px]" />
 
       <div className="relative mx-auto max-w-wrap px-7">
-        <Reveal className="mb-10 max-w-xl">
+        <Reveal className="mb-12 max-w-xl">
           <div className="mb-3.5 flex items-center font-mono text-sm text-brand-cyan section-label">
             PROJECTS
           </div>

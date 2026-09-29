@@ -1,6 +1,6 @@
 export interface SkillItem {
   name: string;
-  level: number; // 0-100
+  level: number;
 }
 
 export interface SkillCategory {
@@ -23,11 +23,13 @@ export interface ProjectItem {
   categoryLabel: string;
   category: ProjectCategory;
   description: string;
+  problem: string;
   role: string;
   tech: string;
   features: string[];
   contribution: string;
   highlights: string[];
+  impact: string;
   stack: string;
 }
 
@@ -46,7 +48,8 @@ export interface JourneyStep {
 export interface CertificationItem {
   icon: string;
   name: string;
-  status: string;
+  status: "Completed" | "In Progress";
+  detail?: string;
 }
 
 export interface CodingProfileItem {
@@ -75,4 +78,44 @@ export interface StatItem {
 export interface CounterItem {
   target: number;
   label: string;
+}
+
+export interface AboutStat {
+  value: string;
+  suffix: string;
+  label: string;
+  color: string;
+}
+
+export interface SnapshotRow {
+  label: string;
+  value: string;
+  icon: string;
+}
+
+export interface EngineeringDecisionItem {
+  category: string;
+  question: string;
+  answer: string;
+  tags: string[];
+}
+
+export interface EngineeringImpactItem {
+  category: string;
+  title: string;
+  description: string;
+}
+
+export interface ArchFlowStep {
+  label: string;
+  sub?: string;
+  highlight?: boolean;
+}
+
+export interface ArchFlow {
+  id: string;
+  title: string;
+  description: string;
+  color: string;
+  steps: ArchFlowStep[];
 }

@@ -7,16 +7,16 @@ import BackendArchitecture from "./BackendArchitecture";
 import { SITE, TYPING_LINES } from "@/constants/data";
 
 const SKILL_CHIPS = [
-  { label: "2.9+ Years Experience",    color: "border-brand-purple/40 bg-brand-purple/10 text-brand-purple" },
-  { label: "Team Lead Responsibilities", color: "border-brand-cyan/40 bg-brand-cyan/10 text-brand-cyan" },
+  { label: "3 Years Professional",      color: "border-brand-purple/40 bg-brand-purple/10 text-brand-purple" },
+  { label: ".NET Core / C#",           color: "border-brand-cyan/40 bg-brand-cyan/10 text-brand-cyan" },
   { label: "AI Integration",           color: "border-emerald-400/40 bg-emerald-400/10 text-emerald-400" },
   { label: "SQL Server Performance",   color: "border-sky-400/40 bg-sky-400/10 text-sky-400" },
 ];
 
 const ACHIEVEMENTS = [
-  "15+ Enterprise Modules Delivered",
-  "AI Chatbot & OCR Implementations",
-  "SAP Integration Experience",
+  "3 Live Enterprise Applications in Production",
+  "First AI (LLM + OCR) Features at Appstean Infotech",
+  "SAP Integration & Performance Optimization",
 ];
 
 export default function Hero() {
@@ -76,7 +76,7 @@ export default function Hero() {
 
           {/* Role subtitle */}
           <p className="mt-3 text-base font-medium text-text/80 md:text-lg">
-            Senior .NET Full Stack Engineer &nbsp;·&nbsp; Backend Specialist &nbsp;·&nbsp; AI Integration Engineer
+            .NET Full Stack Developer &nbsp;·&nbsp; Backend Specialist &nbsp;·&nbsp; AI Integration
           </p>
 
           {/* Typing line */}
@@ -88,9 +88,10 @@ export default function Hero() {
 
           {/* Bio */}
           <p className="mt-4 max-w-[520px] text-[15px] leading-relaxed text-text/75">
-            Building enterprise Sales Force Automation platforms used by pharmaceutical
-            sales teams. Leading backend architecture, SQL optimization, AI-powered
-            reporting, SAP integrations, and production deployments at{" "}
+            Software Developer with 3 years of experience building and
+            optimizing enterprise applications using .NET, Angular, SQL Server, and
+            AI-powered solutions — with hands-on technical ownership across production
+            systems at{" "}
             <span className="font-medium text-text">Appstean Infotech</span>.
           </p>
 
@@ -133,6 +134,12 @@ export default function Hero() {
             >
               View Projects
             </a>
+            <a
+              href="#contact"
+              className="rounded-[10px] border border-border px-6 py-3 text-sm font-semibold text-muted transition-all hover:border-brand-cyan hover:text-brand-cyan"
+            >
+              Contact Me
+            </a>
           </div>
 
           {/* Social links */}
@@ -155,8 +162,6 @@ export default function Hero() {
             >
               <Linkedin size={17} />
             </a>
-            <span className="h-px w-16 bg-gradient-to-r from-border to-transparent" />
-            <span className="font-mono text-[11px] text-muted">{SITE.email}</span>
           </div>
         </div>
 
