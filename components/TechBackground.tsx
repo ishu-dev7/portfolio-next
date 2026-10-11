@@ -12,7 +12,7 @@ interface Particle {
 }
 
 const SYMBOLS = ["</>", "{}", "=>", "[]", "&&", "fn()", "API", ".NET", "SQL", "AI", "async", "GET"];
-const COLORS  = ["#7C5CFF", "#22D3EE", "#3D5AFE", "#a78bfa", "#38bdf8", "#34d399"];
+const COLORS  = ["#2563A6", "#3B82C4", "#1D4F85", "#6EA8E6", "#0E7490", "#5B8DB8"];
 
 function buildParticles(w: number, h: number): Particle[] {
   const count = Math.min(Math.max(Math.floor((w * h) / 9000), 40), 90);
@@ -72,7 +72,7 @@ export default function TechBackground({ connectDist = 160 }: { connectDist?: nu
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < connectDist) {
             const a = ((1 - dist / connectDist) * 0.3).toFixed(2);
-            ctx!.strokeStyle = `rgba(124,92,255,${a})`;
+            ctx!.strokeStyle = `rgba(37,99,166,${a})`;
             ctx!.beginPath();
             ctx!.moveTo(particles[i].x, particles[i].y);
             ctx!.lineTo(particles[j].x, particles[j].y);

@@ -49,7 +49,7 @@ export default function Skills() {
             const colors = CATEGORY_COLORS[category.title] ?? CATEGORY_COLORS["Backend"];
             return (
               <Reveal delay={i * 0.06} key={category.title}>
-                <div className={`group h-full rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_40px_-12px_rgba(124,92,255,0.15)] ${colors.card}`}>
+                <div className={`group h-full rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_40px_-12px_rgba(37,99,166,0.15)] ${colors.card}`}>
                   {/* Category header */}
                   <div className="mb-5 flex items-center gap-3">
                     <div className={`flex h-9 w-9 items-center justify-center rounded-lg border ${colors.icon}`}>

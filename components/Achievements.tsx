@@ -4,15 +4,15 @@ import TechBackground from "./TechBackground";
 import { ACHIEVEMENTS } from "@/constants/data";
 
 const ICONS = [
-  { icon: Trophy,    color: "text-yellow-400 bg-yellow-400/10 border-yellow-400/25",  glow: "hover:shadow-[0_8px_30px_-8px_rgba(250,204,21,0.4)]",   special: true  },
-  { icon: Medal,     color: "text-amber-400  bg-amber-400/10  border-amber-400/25",   glow: "hover:shadow-[0_8px_30px_-8px_rgba(251,191,36,0.4)]",   special: true  },
-  { icon: ThumbsUp,  color: "text-pink-400   bg-pink-400/10   border-pink-400/25",    glow: "hover:shadow-[0_8px_30px_-8px_rgba(244,114,182,0.35)]", special: false },
-  { icon: Cpu,       color: "text-emerald-400 bg-emerald-400/10 border-emerald-400/25", glow: "hover:shadow-[0_8px_30px_-8px_rgba(52,211,153,0.35)]", special: false },
-  { icon: Layers,    color: "text-brand-cyan  bg-brand-cyan/10  border-brand-cyan/25",  glow: "hover:shadow-[0_8px_30px_-8px_rgba(34,211,238,0.35)]", special: false },
-  { icon: Zap,       color: "text-orange-400  bg-orange-400/10  border-orange-400/25",  glow: "hover:shadow-[0_8px_30px_-8px_rgba(251,146,60,0.35)]",  special: false },
-  { icon: Rocket,    color: "text-sky-400     bg-sky-400/10     border-sky-400/25",     glow: "hover:shadow-[0_8px_30px_-8px_rgba(56,189,248,0.35)]",  special: false },
-  { icon: Users,     color: "text-violet-400  bg-violet-400/10  border-violet-400/25",  glow: "hover:shadow-[0_8px_30px_-8px_rgba(167,139,250,0.35)]", special: false },
-  { icon: Link2,     color: "text-brand-blue  bg-brand-blue/10  border-brand-blue/25",  glow: "hover:shadow-[0_8px_30px_-8px_rgba(61,90,254,0.35)]",   special: false },
+  { icon: Trophy,    color: "text-yellow-400 bg-yellow-400/10 border-yellow-400/25",  glow: "hover:shadow-[0_8px_30px_-8px_rgba(140,118,32,0.4)]",   special: true  },
+  { icon: Medal,     color: "text-amber-400  bg-amber-400/10  border-amber-400/25",   glow: "hover:shadow-[0_8px_30px_-8px_rgba(150,110,30,0.4)]",   special: true  },
+  { icon: ThumbsUp,  color: "text-pink-400   bg-pink-400/10   border-pink-400/25",    glow: "hover:shadow-[0_8px_30px_-8px_rgba(166,96,84,0.35)]", special: false },
+  { icon: Cpu,       color: "text-emerald-400 bg-emerald-400/10 border-emerald-400/25", glow: "hover:shadow-[0_8px_30px_-8px_rgba(21,128,61,0.35)]", special: false },
+  { icon: Layers,    color: "text-brand-cyan  bg-brand-cyan/10  border-brand-cyan/25",  glow: "hover:shadow-[0_8px_30px_-8px_rgba(47,117,181,0.35)]", special: false },
+  { icon: Zap,       color: "text-orange-400  bg-orange-400/10  border-orange-400/25",  glow: "hover:shadow-[0_8px_30px_-8px_rgba(176,98,52,0.35)]",  special: false },
+  { icon: Rocket,    color: "text-sky-400     bg-sky-400/10     border-sky-400/25",     glow: "hover:shadow-[0_8px_30px_-8px_rgba(14,116,144,0.35)]",  special: false },
+  { icon: Users,     color: "text-violet-400  bg-violet-400/10  border-violet-400/25",  glow: "hover:shadow-[0_8px_30px_-8px_rgba(71,85,105,0.35)]", special: false },
+  { icon: Link2,     color: "text-brand-blue  bg-brand-blue/10  border-brand-blue/25",  glow: "hover:shadow-[0_8px_30px_-8px_rgba(29,79,133,0.35)]",   special: false },
 ];
 
 export default function Achievements() {

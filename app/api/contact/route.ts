@@ -23,9 +23,9 @@ export async function POST(req: NextRequest) {
   const infoHtml = infoRows.map(row => `
     <tr>
       <td style="padding:0 0 14px;">
-        <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8f7ff;border-radius:10px;overflow:hidden;">
+        <table width="100%" cellpadding="0" cellspacing="0" style="background:#EFF6FC;border-radius:10px;overflow:hidden;">
           <tr>
-            <td width="4" style="background:linear-gradient(180deg,#7C5CFF,#3D5AFE);font-size:0;">&nbsp;</td>
+            <td width="4" style="background:#2563A6;font-size:0;">&nbsp;</td>
             <td style="padding:12px 16px;">
               <p style="margin:0 0 2px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#9ca3af;font-weight:600;">${row.label}</p>
               <p style="margin:0;font-size:14px;color:#1f2937;font-weight:500;">${row.value}</p>
@@ -42,10 +42,10 @@ export async function POST(req: NextRequest) {
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>New Contact Message</title>
 </head>
-<body style="margin:0;padding:0;background:#f3f4f6;font-family:'Segoe UI',Helvetica,Arial,sans-serif;">
+<body style="margin:0;padding:0;background:#F8FAFC;font-family:'Segoe UI',Helvetica,Arial,sans-serif;">
 
   <!-- Outer wrapper -->
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f3f4f6;padding:40px 16px;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#F8FAFC;padding:40px 16px;">
     <tr><td align="center">
 
       <!-- Card -->
@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
 
         <!-- ── HEADER ── -->
         <tr>
-          <td style="background:linear-gradient(135deg,#7C5CFF 0%,#3D5AFE 60%,#22D3EE 100%);padding:36px 40px 32px;">
+          <td style="background:#2563A6;padding:36px 40px 32px;">
             <table width="100%" cellpadding="0" cellspacing="0">
               <tr>
                 <td>
@@ -72,15 +72,15 @@ export async function POST(req: NextRequest) {
 
         <!-- ── SENDER BANNER ── -->
         <tr>
-          <td style="background:#1e1b4b;padding:18px 40px;">
+          <td style="background:#172B4D;padding:18px 40px;">
             <table width="100%" cellpadding="0" cellspacing="0">
               <tr>
                 <td>
                   <p style="margin:0;font-size:17px;font-weight:600;color:#ffffff;">${name}</p>
-                  <p style="margin:3px 0 0;font-size:13px;color:#a5b4fc;">${email}</p>
+                  <p style="margin:3px 0 0;font-size:13px;color:#BBD0E8;">${email}</p>
                 </td>
                 <td align="right">
-                  <span style="display:inline-block;background:rgba(124,92,255,0.25);border:1px solid rgba(124,92,255,0.4);border-radius:20px;padding:4px 12px;font-size:11px;color:#c4b5fd;font-weight:600;letter-spacing:1px;">NEW MESSAGE</span>
+                  <span style="display:inline-block;background:rgba(110,168,230,0.25);border:1px solid rgba(110,168,230,0.4);border-radius:20px;padding:4px 12px;font-size:11px;color:#DCEAF7;font-weight:600;letter-spacing:1px;">NEW MESSAGE</span>
                 </td>
               </tr>
             </table>
@@ -103,8 +103,8 @@ export async function POST(req: NextRequest) {
             <!-- Message box -->
             <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
               <tr>
-                <td width="4" style="background:linear-gradient(180deg,#7C5CFF,#22D3EE);border-radius:4px 0 0 4px;font-size:0;">&nbsp;</td>
-                <td style="background:#f8f7ff;border-radius:0 10px 10px 0;padding:18px 20px;border:1px solid #ede9fe;border-left:none;">
+                <td width="4" style="background:#2563A6;border-radius:4px 0 0 4px;font-size:0;">&nbsp;</td>
+                <td style="background:#EFF6FC;border-radius:0 10px 10px 0;padding:18px 20px;border:1px solid #E2E8F0;border-left:none;">
                   <p style="margin:0;font-size:15px;line-height:1.8;color:#374151;white-space:pre-wrap;">${safeMsg}</p>
                 </td>
               </tr>
@@ -118,7 +118,7 @@ export async function POST(req: NextRequest) {
           <td style="background:#ffffff;padding:0 40px 36px;">
             <table cellpadding="0" cellspacing="0">
               <tr>
-                <td style="border-radius:10px;background:linear-gradient(135deg,#7C5CFF,#3D5AFE);box-shadow:0 4px 20px rgba(124,92,255,0.4);">
+                <td style="border-radius:10px;background:#2563A6;box-shadow:0 4px 20px rgba(37,99,166,0.35);">
                   <a href="mailto:${email}?subject=Re%3A ${encodeURIComponent(subject || "Your portfolio message")}"
                      style="display:inline-block;padding:13px 32px;font-size:14px;font-weight:600;color:#ffffff;text-decoration:none;letter-spacing:0.3px;">
                     ↩ Reply to ${name}
@@ -132,7 +132,7 @@ export async function POST(req: NextRequest) {
         <!-- ── DIVIDER ── -->
         <tr>
           <td style="background:#ffffff;padding:0 40px;">
-            <div style="height:1px;background:linear-gradient(90deg,#7C5CFF33,#22D3EE33,transparent);"></div>
+            <div style="height:1px;background:linear-gradient(90deg,#2563A633,#2563A633,transparent);"></div>
           </td>
         </tr>
 
@@ -141,7 +141,7 @@ export async function POST(req: NextRequest) {
           <td style="background:#ffffff;border-radius:0 0 20px 20px;padding:20px 40px 28px;">
             <p style="margin:0;font-size:12px;color:#9ca3af;text-align:center;line-height:1.6;">
               Sent via the contact form on
-              <a href="https://portfolio-harendra.vercel.app" style="color:#7C5CFF;text-decoration:none;font-weight:500;">portfolio-harendra.vercel.app</a>
+              <a href="https://portfolio-harendra.vercel.app" style="color:#2563A6;text-decoration:none;font-weight:500;">portfolio-harendra.vercel.app</a>
               <br/>Reply directly to this email or click the button above.
             </p>
           </td>

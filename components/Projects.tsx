@@ -18,17 +18,17 @@ const CATEGORY_META: Record<string, { bar: string; badge: string; glow: string }
   enterprise: {
     bar:   "card-top-bar-enterprise",
     badge: "border-brand-purple/40 bg-brand-purple/10 text-brand-purple",
-    glow:  "hover:shadow-[0_8px_40px_-12px_rgba(124,92,255,0.3)]",
+    glow:  "hover:shadow-[0_8px_40px_-12px_rgba(37,99,166,0.3)]",
   },
   ai: {
     bar:   "card-top-bar-ai",
     badge: "border-brand-cyan/40 bg-brand-cyan/10 text-brand-cyan",
-    glow:  "hover:shadow-[0_8px_40px_-12px_rgba(34,211,238,0.3)]",
+    glow:  "hover:shadow-[0_8px_40px_-12px_rgba(47,117,181,0.3)]",
   },
   tooling: {
     bar:   "card-top-bar-tooling",
     badge: "border-brand-blue/40 bg-brand-blue/10 text-brand-blue",
-    glow:  "hover:shadow-[0_8px_40px_-12px_rgba(61,90,254,0.3)]",
+    glow:  "hover:shadow-[0_8px_40px_-12px_rgba(29,79,133,0.3)]",
   },
 };
 
@@ -147,7 +147,7 @@ export default function Projects() {
               onClick={() => setFilter(f.value)}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
                 filter === f.value
-                  ? "bg-brand-gradient text-white shadow-[0_4px_20px_-4px_rgba(124,92,255,0.5)]"
+                  ? "bg-brand-gradient text-white shadow-[0_4px_20px_-4px_rgba(37,99,166,0.5)]"
                   : "border border-border text-muted hover:border-brand-purple hover:text-text"
               }`}
             >

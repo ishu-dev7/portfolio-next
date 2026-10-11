@@ -19,7 +19,7 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
             <Reveal delay={i * 0.06} key={t.name}>
-              <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/40 hover:shadow-[0_8px_40px_-12px_rgba(124,92,255,0.2)]">
+              <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/40 hover:shadow-[0_8px_40px_-12px_rgba(37,99,166,0.2)]">
                 {/* Large decorative quote mark */}
                 <div className="pointer-events-none absolute right-5 top-3 font-display text-8xl font-bold leading-none text-border select-none">
                   &ldquo;

@@ -76,7 +76,7 @@ export default function Resume() {
                 <a
                   href="/HARENDRA_Updated_Resume.pdf"
                   download="Harendra_Pratap_Singh_Resume.pdf"
-                  className="inline-flex w-fit items-center gap-2.5 rounded-[10px] bg-brand-gradient px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_24px_-6px_rgba(124,92,255,0.6)] transition-transform hover:-translate-y-0.5"
+                  className="inline-flex w-fit items-center gap-2.5 rounded-[10px] bg-brand-gradient px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_24px_-6px_rgba(37,99,166,0.6)] transition-transform hover:-translate-y-0.5"
                 >
                   <Download size={15} />
                   Download Resume (PDF)

@@ -38,7 +38,7 @@ export default function Experience() {
                   </div>
 
                   {/* Card */}
-                  <div className="group overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-300 hover:border-brand-purple/50 hover:-translate-y-1 hover:shadow-[0_8px_40px_-12px_rgba(124,92,255,0.3)]">
+                  <div className="group overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-300 hover:border-brand-purple/50 hover:-translate-y-1 hover:shadow-[0_8px_40px_-12px_rgba(37,99,166,0.3)]">
                     <div className={`h-[3px] w-full ${i === 0 ? "card-top-bar" : "bg-gradient-to-r from-border to-transparent"}`} />
 
                     <div className="p-6 md:p-7">

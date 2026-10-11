@@ -63,7 +63,7 @@ const THEME_INIT_SCRIPT = `
 (function() {
   try {
     var theme = localStorage.getItem('portfolio-theme');
-    if (theme === 'light') {
+    if (theme !== 'dark') {
       document.documentElement.classList.add('light');
     }
   } catch (e) {}

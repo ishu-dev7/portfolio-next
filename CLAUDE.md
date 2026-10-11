@@ -42,6 +42,14 @@ Tailwind config in [tailwind.config.ts](tailwind.config.ts) maps all design toke
 
 Three Google Fonts loaded server-side: **Space Grotesk** (display headings), **Inter** (body), **JetBrains Mono** (labels/code). Applied via CSS variables and the Tailwind `font-display`, `font-body`, `font-mono` utilities.
 
+### Contact form / API
+
+`components/Contact.tsx` POSTs JSON to [app/api/contact/route.ts](app/api/contact/route.ts), the only server route. It sends an HTML email via **Resend**. Env vars:
+- `RESEND_API_KEY` (required)
+- `CONTACT_TO_EMAIL` (optional; falls back to a hardcoded address in the route)
+
+The sender is `onboarding@resend.dev` (Resend's sandbox sender), so a verified domain is needed for production delivery to arbitrary recipients. The route escapes only `message` for HTML. `name`, `email`, `phone`, `company` and `subject` are interpolated raw into the email template. The route also returns the Resend error detail to the client (added for debugging) and has no rate limiting.
+
 ### SEO / PWA
 
 - Dynamic sitemap: `app/sitemap.ts`
@@ -54,7 +62,6 @@ Update the canonical URL (currently `https://example.com`) in `constants/data.ts
 
 ## Known incomplete areas
 
-- **Contact form** (`components/Contact.tsx`) — shows a placeholder alert; needs a real backend (Resend, Formspree, etc.)
 - **Certifications** — all marked "Coming Soon" in `constants/data.ts`
 - **Hero profile photo** — placeholder box; swap in a real `<Image>` component
 - **Social links** — GitHub/LinkedIn URLs in `constants/data.ts` default to `#`

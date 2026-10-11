@@ -17,10 +17,20 @@ const config: Config = {
         text: "var(--text)",
         muted: "var(--muted)",
         brand: {
-          purple: "#7C5CFF",
-          blue: "#3D5AFE",
-          cyan: "#22D3EE",
+          purple: "rgb(var(--accent) / <alpha-value>)",
+          blue: "rgb(var(--accent-hover) / <alpha-value>)",
+          cyan: "rgb(var(--accent-2) / <alpha-value>)",
         },
+        sky: { 400: "rgb(var(--c-sky) / <alpha-value>)" },
+        blue: { 400: "rgb(var(--c-blue) / <alpha-value>)" },
+        violet: { 400: "rgb(var(--c-violet) / <alpha-value>)" },
+        indigo: { 400: "rgb(var(--c-indigo) / <alpha-value>)" },
+        pink: { 400: "rgb(var(--c-pink) / <alpha-value>)" },
+        orange: { 400: "rgb(var(--c-orange) / <alpha-value>)" },
+        amber: { 400: "rgb(var(--c-amber) / <alpha-value>)" },
+        yellow: { 400: "rgb(var(--c-yellow) / <alpha-value>)" },
+        red: { 400: "rgb(var(--c-red) / <alpha-value>)" },
+        emerald: { 400: "rgb(var(--c-emerald) / <alpha-value>)" },
       },
       fontFamily: {
         display: ["var(--font-space-grotesk)", "sans-serif"],
@@ -29,7 +39,7 @@ const config: Config = {
       },
       backgroundImage: {
         "brand-gradient":
-          "linear-gradient(120deg, #7C5CFF, #3D5AFE 55%, #22D3EE)",
+          "linear-gradient(120deg, rgb(var(--btn)), rgb(var(--btn-hover)))",
       },
       borderRadius: {
         card: "14px",

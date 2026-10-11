@@ -289,12 +289,12 @@ export const ARCHITECTURE_FLOWS: ArchFlow[] = [
     id: "webapp",
     title: "Enterprise Web Application",
     description: "Standard layered architecture used across the SFA and HRMS platforms.",
-    color: "#7C5CFF",
+    color: "#2563A6",
     steps: [
       { label: "Angular SPA", sub: "TypeScript · DevExtreme · Material" },
       { label: "ASP.NET Core API", sub: "REST · JWT · Middleware", highlight: true },
       { label: "Business Logic Layer", sub: "Services · Validators · DI" },
-      { label: "Data Access Layer", sub: "EF Core · Stored Procedures" },
+      { label: "Data Access Layer", sub: "Dapper · Stored Procedures" },
       { label: "SQL Server", sub: "T-SQL · Views · Indexes" },
     ],
   },
@@ -302,7 +302,7 @@ export const ARCHITECTURE_FLOWS: ArchFlow[] = [
     id: "auth",
     title: "Authentication Flow",
     description: "JWT-based stateless authentication with middleware pipeline.",
-    color: "#22D3EE",
+    color: "#0E7490",
     steps: [
       { label: "Login Request", sub: "Credentials · Angular" },
       { label: "Auth Controller", sub: "ASP.NET Core" },
@@ -316,7 +316,7 @@ export const ARCHITECTURE_FLOWS: ArchFlow[] = [
     id: "ai",
     title: "AI Sales Insights Pipeline",
     description: "LLM-powered natural-language analysis of real sales report data.",
-    color: "#34d399",
+    color: "#3B82C4",
     steps: [
       { label: "Sales Data", sub: "SQL Server · Report Tables" },
       { label: "Report Generation", sub: ".NET Core · Dynamic SQL" },
@@ -331,7 +331,7 @@ export const ARCHITECTURE_FLOWS: ArchFlow[] = [
     id: "ocr",
     title: "OCR Automation Pipeline",
     description: "Document-to-database automation via Azure OpenAI Vision.",
-    color: "#fb923c",
+    color: "#B8794A",
     steps: [
       { label: "Document / Image", sub: "Photo · Scan · Upload" },
       { label: "File Upload API", sub: "ASP.NET Core · Validation" },
@@ -358,7 +358,7 @@ export const ENGINEERING_DECISIONS: EngineeringDecisionItem[] = [
     category: "Database",
     question: "How were SQL Server performance issues diagnosed and resolved?",
     answer:
-      "Using SQL Server Management Studio's execution plan analyzer to identify missing indexes, key lookups, and table scans. Added covering indexes for high-frequency API queries, rewrote correlated subqueries as JOINs, and eliminated N+1 patterns in EF Core by switching to explicit Includes or raw SQL where needed. Measured before/after using SET STATISTICS TIME.",
+      "Using SQL Server Management Studio's execution plan analyzer to identify missing indexes, key lookups, and table scans. Added covering indexes for high-frequency API queries, rewrote correlated subqueries as JOINs, and eliminated N+1 patterns in Dapper by switching to explicit Includes or raw SQL where needed. Measured before/after using SET STATISTICS TIME.",
     tags: ["SQL Server", "Performance", "Indexing", "Execution Plans"],
   },
   {
@@ -411,7 +411,7 @@ export const ENGINEERING_IMPACT: EngineeringImpactItem[] = [
   // Performance
   { category: "Performance", title: "SQL Execution Plan Analysis", description: "Diagnosed slow queries using SSMS execution plan analyzer; added covering indexes and rewrote subqueries — measurably reducing API response times in production." },
   { category: "Performance", title: "Deadlock Resolution", description: "Identified and resolved a production multi-table deadlock by analyzing deadlock graphs, standardizing lock order, and restructuring the transaction boundary." },
-  { category: "Performance", title: "EF Core Query Optimization", description: "Eliminated N+1 query patterns by converting to explicit joins and raw SQL where ORM overhead was measurable." },
+  { category: "Performance", title: "Dapper Query Optimization", description: "Eliminated N+1 query patterns by converting to explicit joins and raw SQL where ORM overhead was measurable." },
   // Modernization
   { category: "Modernization", title: ".NET Framework → .NET Core Migration", description: "Led incremental migration of legacy API modules to .NET Core, enabling modern middleware, better performance, and cross-platform deployment capability." },
   { category: "Modernization", title: "Dynamic Reporting Engine", description: "Built a self-service reporting tool eliminating developer bottleneck — business users configure their own reports without code changes." },

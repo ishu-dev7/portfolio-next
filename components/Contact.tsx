@@ -172,7 +172,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="mt-1 inline-flex w-full items-center justify-center gap-2 rounded-[10px] bg-brand-gradient py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_-6px_rgba(124,92,255,0.5)] transition-opacity disabled:opacity-70"
+                    className="mt-1 inline-flex w-full items-center justify-center gap-2 rounded-[10px] bg-brand-gradient py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_-6px_rgba(37,99,166,0.5)] transition-opacity disabled:opacity-70"
                   >
                     <Send size={14} />
                     {loading ? "Sending…" : "Send Message"}

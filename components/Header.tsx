@@ -71,7 +71,7 @@ export default function Header() {
           <ThemeToggle />
           <a
             href={`mailto:${SITE.email}`}
-            className="hidden rounded-[10px] bg-brand-gradient px-4 py-2 text-sm font-semibold text-white shadow-[0_4px_20px_-4px_rgba(124,92,255,0.6)] transition-transform hover:-translate-y-0.5 md:inline-block"
+            className="hidden rounded-[10px] bg-brand-gradient px-4 py-2 text-sm font-semibold text-white shadow-[0_4px_20px_-4px_rgba(37,99,166,0.6)] transition-transform hover:-translate-y-0.5 md:inline-block"
           >
             Hire Me
           </a>

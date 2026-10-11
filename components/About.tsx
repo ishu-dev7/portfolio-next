@@ -64,7 +64,7 @@ export default function About() {
               {ABOUT_STATS.map((s) => (
                 <div
                   key={s.label}
-                  className="group relative overflow-hidden rounded-xl border border-border bg-surface transition-all duration-200 hover:border-brand-purple/40 hover:-translate-y-0.5 hover:shadow-[0_6px_24px_-8px_rgba(124,92,255,0.25)]"
+                  className="group relative overflow-hidden rounded-xl border border-border bg-surface transition-all duration-200 hover:border-brand-purple/40 hover:-translate-y-0.5 hover:shadow-[0_6px_24px_-8px_rgba(37,99,166,0.25)]"
                 >
                   <div className={`h-[3px] w-full bg-gradient-to-r ${s.color}`} />
                   <div className="px-4 py-4">

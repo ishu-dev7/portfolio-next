@@ -124,7 +124,7 @@ export default function Hero() {
             <a
               href="/HARENDRA_Updated_Resume.pdf"
               download="Harendra_Pratap_Singh_Resume.pdf"
-              className="inline-flex items-center gap-2 rounded-[10px] bg-brand-gradient px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_30px_-8px_rgba(124,92,255,0.65)] transition-transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-[10px] bg-brand-gradient px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_30px_-8px_rgba(37,99,166,0.65)] transition-transform hover:-translate-y-0.5"
             >
               Download Resume
             </a>
@@ -184,7 +184,7 @@ export default function Hero() {
                 priority
                 className="object-cover object-top"
               />
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0a0b12]/70 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0f1b2d]/70 to-transparent" />
             </div>
 
             {/* Floating tech badges */}

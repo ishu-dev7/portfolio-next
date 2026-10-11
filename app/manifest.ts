@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Senior .NET Full Stack Engineer — backend specialist, technical lead, and AI integration engineer.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0A0B12",
-    theme_color: "#7C5CFF",
+    background_color: "#F8FAFC",
+    theme_color: "#2563A6",
     icons: [
       {
         src: "/icon-192.png",

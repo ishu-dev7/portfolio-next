@@ -44,7 +44,7 @@ export default function ParticlesBackground() {
 
     function draw() {
       ctx!.clearRect(0, 0, canvas!.width, canvas!.height);
-      ctx!.fillStyle = "rgba(150,160,255,0.5)";
+      ctx!.fillStyle = "rgba(59,130,196,0.5)";
       particles.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;

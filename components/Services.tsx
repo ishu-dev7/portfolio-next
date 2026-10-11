@@ -37,7 +37,7 @@ export default function Services() {
             const color = SERVICE_COLORS[i % SERVICE_COLORS.length];
             return (
               <Reveal delay={i * 0.05} key={s.title}>
-                <div className="group h-full overflow-hidden rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/40 hover:shadow-[0_8px_40px_-12px_rgba(124,92,255,0.2)]">
+                <div className="group h-full overflow-hidden rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/40 hover:shadow-[0_8px_40px_-12px_rgba(37,99,166,0.2)]">
                   {/* Number + icon row */}
                   <div className="mb-5 flex items-center justify-between">
                     <div className={`flex h-11 w-11 items-center justify-center rounded-xl border ${color}`}>
