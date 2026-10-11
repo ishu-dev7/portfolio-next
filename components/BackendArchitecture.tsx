@@ -50,14 +50,19 @@ export default function BackendArchitecture() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let raf: number;
+    let raf = 0;
+    let running = false;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let packets: Packet[] = [];
     let nodes: Array<ArchNode & { cx: number; cy: number }> = [];
     let tick = 0;
 
     function resize() {
-      canvas!.width = canvas!.parentElement?.offsetWidth || window.innerWidth;
-      canvas!.height = canvas!.parentElement?.offsetHeight || window.innerHeight;
+      const w = canvas!.parentElement?.offsetWidth || window.innerWidth;
+      const h = canvas!.parentElement?.offsetHeight || window.innerHeight;
+      if (w === canvas!.width && h === canvas!.height && nodes.length) return;
+      canvas!.width = w;
+      canvas!.height = h;
       buildNodes();
     }
 
@@ -186,23 +191,43 @@ export default function BackendArchitecture() {
         ctx!.fillText(n.sub, n.cx, n.cy + 7);
       });
 
+      if (running) raf = requestAnimationFrame(draw);
+    }
+
+    function start() {
+      if (running || reducedMotion) return;
+      running = true;
       raf = requestAnimationFrame(draw);
+    }
+    function stop() {
+      running = false;
+      cancelAnimationFrame(raf);
     }
 
     resize();
-    window.addEventListener("resize", () => { resize(); });
     draw();
 
+    // Pause once the hero scrolls out of view
+    const io = new IntersectionObserver(
+      ([entry]) => (entry.isIntersecting ? start() : stop()),
+      { rootMargin: "100px" }
+    );
+    io.observe(canvas);
+
+    const onResize = () => { resize(); draw(); };
+    window.addEventListener("resize", onResize, { passive: true });
+
     return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener("resize", resize);
+      stop();
+      io.disconnect();
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none absolute inset-0 z-0 opacity-70"
+      className="pointer-events-none absolute inset-0 z-0 hidden opacity-70 md:block"
       aria-hidden="true"
     />
   );

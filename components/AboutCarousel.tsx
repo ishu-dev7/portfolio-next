@@ -30,59 +30,46 @@ const SLIDES = [
 
 export default function AboutCarousel() {
   const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState<"next" | "prev">("next");
-  const [animating, setAnimating] = useState(false);
-
-  const go = useCallback(
-    (to: number, dir: "next" | "prev") => {
-      if (animating) return;
-      setDirection(dir);
-      setAnimating(true);
-      setTimeout(() => {
-        setCurrent(to);
-        setAnimating(false);
-      }, 320);
-    },
-    [animating]
-  );
 
   const next = useCallback(() => {
-    go((current + 1) % SLIDES.length, "next");
-  }, [current, go]);
+    setCurrent((c) => (c + 1) % SLIDES.length);
+  }, []);
 
   const prev = useCallback(() => {
-    go((current - 1 + SLIDES.length) % SLIDES.length, "prev");
-  }, [current, go]);
+    setCurrent((c) => (c - 1 + SLIDES.length) % SLIDES.length);
+  }, []);
 
+  // Restarts whenever the slide changes, so a manual click delays the next auto-advance
   useEffect(() => {
     const id = setInterval(next, 4000);
     return () => clearInterval(id);
-  }, [next]);
+  }, [current, next]);
 
   const slide = SLIDES[current];
 
-  const enterTranslate =
-    direction === "next" ? "translate-x-full" : "-translate-x-full";
-
   return (
     <div className="group relative aspect-[4/5] overflow-hidden rounded-[20px] border border-border bg-surface">
-      {/* Image layer */}
-      <div
-        key={current}
-        className={`absolute inset-0 transition-none ${animating ? enterTranslate : "translate-x-0"}`}
-        style={{
-          transition: animating ? "none" : "transform 0.35s cubic-bezier(.4,0,.2,1)",
-        }}
-      >
-        <Image
-          src={slide.src}
-          alt={slide.alt}
-          fill
-          priority={current === 0}
-          className="object-cover"
-          style={{ objectPosition: slide.objectPosition }}
-        />
-      </div>
+      {/* Image layers — all slides stay mounted so none has to load at swap time */}
+      {SLIDES.map((s, i) => (
+        <div
+          key={s.src}
+          className="absolute inset-0 transition-opacity duration-500 ease-in-out"
+          style={{ opacity: i === current ? 1 : 0 }}
+          aria-hidden={i !== current}
+        >
+          <Image
+            src={s.src}
+            alt={s.alt}
+            fill
+            priority={i === 0}
+            loading="eager"
+            sizes="(min-width: 768px) 480px, 100vw"
+            quality={80}
+            className="object-cover"
+            style={{ objectPosition: s.objectPosition }}
+          />
+        </div>
+      ))}
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
@@ -101,7 +88,7 @@ export default function AboutCarousel() {
           {SLIDES.map((_, i) => (
             <button
               key={i}
-              onClick={() => go(i, i > current ? "next" : "prev")}
+              onClick={() => setCurrent(i)}
               aria-label={`Slide ${i + 1}`}
               className={`h-1.5 rounded-full transition-all duration-300 ${
                 i === current

@@ -13,7 +13,10 @@ export default function Header() {
   useEffect(() => {
     const sectionIds = NAV_LINKS.map((l) => l.href.replace("#", ""));
 
-    function onScroll() {
+    let ticking = false;
+
+    function update() {
+      ticking = false;
       setScrolled(window.scrollY > 20);
       let current = sectionIds[0];
       for (const id of sectionIds) {
@@ -23,6 +26,14 @@ export default function Header() {
       setActiveSection(current);
     }
 
+    // Run at most once per frame instead of on every scroll event
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);

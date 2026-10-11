@@ -24,12 +24,17 @@ export default function ParticlesBackground() {
     ).matches;
 
     let particles: Particle[] = [];
-    let animationId: number;
+    let animationId = 0;
+    let running = false;
 
     function resize() {
       const parent = canvas!.parentElement;
-      canvas!.width = window.innerWidth;
-      canvas!.height = parent ? parent.offsetHeight : window.innerHeight;
+      const w = window.innerWidth;
+      const h = parent ? parent.offsetHeight : window.innerHeight;
+      if (w === canvas!.width && h === canvas!.height && particles.length) return;
+      canvas!.width = w;
+      canvas!.height = h;
+      init();
     }
 
     function init() {
@@ -54,23 +59,35 @@ export default function ParticlesBackground() {
         ctx!.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx!.fill();
       });
+      if (running) animationId = requestAnimationFrame(draw);
+    }
+
+    function start() {
+      if (running || reducedMotion) return;
+      running = true;
       animationId = requestAnimationFrame(draw);
+    }
+    function stop() {
+      running = false;
+      cancelAnimationFrame(animationId);
     }
 
     resize();
-    init();
-    window.addEventListener("resize", () => {
-      resize();
-      init();
-    });
+    draw();
 
-    if (!reducedMotion) {
-      draw();
-    }
+    const io = new IntersectionObserver(
+      ([entry]) => (entry.isIntersecting ? start() : stop()),
+      { rootMargin: "100px" }
+    );
+    io.observe(canvas);
+
+    const onResize = () => { resize(); draw(); };
+    window.addEventListener("resize", onResize, { passive: true });
 
     return () => {
-      cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", resize);
+      stop();
+      io.disconnect();
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 

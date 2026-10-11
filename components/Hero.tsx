@@ -182,6 +182,8 @@ export default function Hero() {
                 alt="Harendra Pratap Singh"
                 fill
                 priority
+                sizes="(min-width: 768px) 300px, 280px"
+                quality={85}
                 className="object-cover object-top"
               />
               <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0f1b2d]/70 to-transparent" />

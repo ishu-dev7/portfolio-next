@@ -78,9 +78,9 @@ export default function Contact() {
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border bg-surface2 text-brand-purple">
                       <Icon size={16} />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-xs text-muted">{label}</p>
-                      <p className="text-sm font-medium text-text">{value}</p>
+                      <p className="break-words text-sm font-medium text-text [overflow-wrap:anywhere]">{value}</p>
                     </div>
                   </div>
                 ))}

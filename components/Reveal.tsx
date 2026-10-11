@@ -16,25 +16,19 @@ export default function Reveal({ children, delay = 0, className }: RevealProps) 
     const el = ref.current;
     if (!el) return;
 
-    const check = () => {
-      const { top, bottom } = el.getBoundingClientRect();
-      if (top < window.innerHeight + 100 && bottom > -100) {
-        setVisible(true);
-        window.removeEventListener("scroll", check, true);
-        window.removeEventListener("resize", check);
-      }
-    };
-
-    // Check immediately (handles elements already in or above the viewport)
-    check();
-
-    window.addEventListener("scroll", check, { passive: true, capture: true });
-    window.addEventListener("resize", check, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", check, true);
-      window.removeEventListener("resize", check);
-    };
+    // One IntersectionObserver per element instead of a capture-phase scroll
+    // listener (calling getBoundingClientRect) on every Reveal for every scroll event.
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "100px 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
 
   const style: CSSProperties = {
