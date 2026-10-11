@@ -47,7 +47,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden pt-28 pb-20"
+      className="relative flex items-center overflow-hidden pt-24 pb-12 md:min-h-screen md:pt-28 md:pb-20"
     >
       {/* Animated backend architecture background */}
       <BackendArchitecture />
@@ -59,7 +59,7 @@ export default function Hero() {
       {/* Dot grid */}
       <div className="pointer-events-none absolute inset-0 z-0 dot-grid opacity-30" />
 
-      <div className="relative z-10 mx-auto grid max-w-wrap grid-cols-1 items-center gap-12 px-7 md:grid-cols-[1.25fr_0.85fr]">
+      <div className="relative z-10 mx-auto grid max-w-wrap grid-cols-1 items-center gap-10 px-7 md:gap-12 md:grid-cols-[1.25fr_0.85fr]">
         {/* ── Left: text ── */}
         <div>
           {/* Available badge */}

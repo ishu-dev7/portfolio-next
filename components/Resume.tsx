@@ -24,15 +24,15 @@ export default function Resume() {
           <div className="overflow-hidden rounded-2xl border border-border bg-surface">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr]">
               {/* PDF preview panel */}
-              <div className="relative min-h-[420px] overflow-hidden border-b border-border md:border-b-0 md:border-r">
+              <div className="relative min-h-[240px] overflow-hidden border-b border-border md:min-h-[420px] md:border-b-0 md:border-r">
                 {/* Gradient backdrop so it never looks completely blank */}
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/10 via-surface2 to-brand-blue/10" />
                 <div className="pointer-events-none absolute inset-0 dot-grid opacity-30" />
 
-                {/* iframe — loads in real browser */}
+                {/* iframe — desktop only: phone browsers can't render PDFs inline and show a blank box */}
                 <iframe
                   src="/HARENDRA_Updated_Resume.pdf"
-                  className="relative z-10 h-full min-h-[420px] w-full"
+                  className="relative z-10 hidden h-full min-h-[420px] w-full md:block"
                   title="Harendra Pratap Singh — Resume"
                 />
 
@@ -42,11 +42,20 @@ export default function Resume() {
                     <FileText size={28} className="text-brand-purple" />
                   </div>
                   <p className="font-mono text-xs text-muted">PDF Preview</p>
+                  {/* Phones: open the PDF in the browser's own viewer instead */}
+                  <a
+                    href="/HARENDRA_Updated_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pointer-events-auto mt-1 rounded-[10px] border border-border bg-surface px-5 py-2 text-sm font-medium text-text transition-colors hover:border-brand-purple md:hidden"
+                  >
+                    View Resume
+                  </a>
                 </div>
               </div>
 
               {/* Right info panel — vertically centred */}
-              <div className="flex flex-col justify-center p-10">
+              <div className="flex flex-col justify-center p-6 md:p-10">
                 {/* Accent bar */}
                 <div className="mb-6 h-1 w-16 rounded-full bg-brand-gradient" />
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -30,6 +30,9 @@ const SLIDES = [
 
 export default function AboutCarousel() {
   const [current, setCurrent] = useState(0);
+  const [dragX, setDragX] = useState(0);
+  const [dragging, setDragging] = useState(false);
+  const drag = useRef({ active: false, startX: 0, startY: 0, locked: false, width: 1 });
 
   const next = useCallback(() => {
     setCurrent((c) => (c + 1) % SLIDES.length);
@@ -41,20 +44,74 @@ export default function AboutCarousel() {
 
   // Restarts whenever the slide changes, so a manual click delays the next auto-advance
   useEffect(() => {
-    const id = setInterval(next, 4000);
+    const id = setInterval(() => {
+      if (!drag.current.active) next();
+    }, 4000);
     return () => clearInterval(id);
   }, [current, next]);
 
   const slide = SLIDES[current];
 
+  // Drag / swipe — pointer events cover both touch and mouse
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if ((e.target as HTMLElement).closest("button")) return;
+    drag.current = {
+      active: true,
+      startX: e.clientX,
+      startY: e.clientY,
+      locked: false,
+      width: e.currentTarget.offsetWidth || 1,
+    };
+  };
+
+  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    const d = drag.current;
+    if (!d.active) return;
+    const dx = e.clientX - d.startX;
+    if (!d.locked) {
+      if (Math.abs(dx) < 6) return;
+      d.locked = true;
+      setDragging(true);
+      e.currentTarget.setPointerCapture(e.pointerId);
+    }
+    // Resist dragging past the first / last slide
+    const atEdge = (current === 0 && dx > 0) || (current === SLIDES.length - 1 && dx < 0);
+    setDragX(atEdge ? dx * 0.35 : dx);
+  };
+
+  const endDrag = (e: React.PointerEvent<HTMLDivElement>) => {
+    const d = drag.current;
+    if (!d.active) return;
+    d.active = false;
+    if (!d.locked) return;
+    const dx = e.clientX - d.startX;
+    const threshold = Math.min(80, d.width * 0.2);
+    if (dx <= -threshold && current < SLIDES.length - 1) setCurrent(current + 1);
+    else if (dx >= threshold && current > 0) setCurrent(current - 1);
+    setDragging(false);
+    setDragX(0);
+  };
+
   return (
-    <div className="group relative aspect-[4/5] overflow-hidden rounded-[20px] border border-border bg-surface">
-      {/* Image layers — all slides stay mounted so none has to load at swap time */}
+    <div
+      className="group relative aspect-[4/5] cursor-grab touch-pan-y select-none overflow-hidden rounded-[20px] border border-border bg-surface active:cursor-grabbing"
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={endDrag}
+      onPointerCancel={endDrag}
+    >
+      {/* Sliding track — all slides stay mounted so none has to load at swap time */}
+      <div
+        className="absolute inset-0 flex"
+        style={{
+          transform: `translateX(calc(${-current * 100}% + ${dragX}px))`,
+          transition: dragging ? "none" : "transform 0.4s cubic-bezier(.4,0,.2,1)",
+        }}
+      >
       {SLIDES.map((s, i) => (
         <div
           key={s.src}
-          className="absolute inset-0 transition-opacity duration-500 ease-in-out"
-          style={{ opacity: i === current ? 1 : 0 }}
+          className="relative h-full w-full shrink-0"
           aria-hidden={i !== current}
         >
           <Image
@@ -65,11 +122,13 @@ export default function AboutCarousel() {
             loading="eager"
             sizes="(min-width: 768px) 480px, 100vw"
             quality={80}
+            draggable={false}
             className="object-cover"
             style={{ objectPosition: s.objectPosition }}
           />
         </div>
       ))}
+      </div>
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
