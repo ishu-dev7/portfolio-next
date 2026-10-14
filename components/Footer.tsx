@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUp, Linkedin, Mail } from "lucide-react";
 import { SITE } from "@/constants/data";
 
 const LINKS = [
@@ -35,15 +35,6 @@ export default function Footer() {
               systems with .NET, SQL Server, and AI integrations.
             </p>
             <div className="flex gap-3">
-              <a
-                href={SITE.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="flex h-9 w-9 items-center justify-center rounded-[9px] border border-border text-muted transition-all hover:border-brand-cyan hover:text-brand-cyan"
-              >
-                <Github size={16} />
-              </a>
               <a
                 href={SITE.linkedin}
                 target="_blank"

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Check, Github, Linkedin } from "lucide-react";
+import { Check, Linkedin } from "lucide-react";
 import BackendArchitecture from "./BackendArchitecture";
 import { SITE, TYPING_LINES } from "@/constants/data";
 
@@ -144,15 +144,6 @@ export default function Hero() {
 
           {/* Social links */}
           <div className="mt-7 flex items-center gap-4">
-            <a
-              href={SITE.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="flex h-9 w-9 items-center justify-center rounded-[10px] border border-border text-muted transition-all hover:border-brand-cyan hover:text-brand-cyan"
-            >
-              <Github size={17} />
-            </a>
             <a
               href={SITE.linkedin}
               target="_blank"

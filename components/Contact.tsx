@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import {
-  CheckCircle, Github, Linkedin, Mail, MapPin, Clock, Send,
+  CheckCircle, Linkedin, Mail, MapPin, Clock, Send,
 } from "lucide-react";
 import Reveal from "./Reveal";
 import { SITE } from "@/constants/data";
@@ -88,14 +88,6 @@ export default function Contact() {
 
               {/* Social links */}
               <div className="flex gap-3">
-                <a
-                  href={SITE.github}
-                  target="_blank" rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted transition-all hover:border-brand-cyan hover:text-brand-cyan"
-                >
-                  <Github size={17} />
-                </a>
                 <a
                   href={SITE.linkedin}
                   target="_blank" rel="noopener noreferrer"
