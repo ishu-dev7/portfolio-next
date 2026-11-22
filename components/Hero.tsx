@@ -14,9 +14,9 @@ const SKILL_CHIPS = [
 ];
 
 const ACHIEVEMENTS = [
-  "3 Live Enterprise Applications in Production",
-  "First AI (LLM + OCR) Features at Appstean Infotech",
-  "SAP Integration & Performance Optimization",
+  "Enterprise SaaS in Production — Salestrip SFA & Arriba HRMS",
+  "LLM, OCR & Agentic AI Features at Appstean Infotech",
+  "SQL Performance Optimization & Deadlock Resolution",
 ];
 
 export default function Hero() {

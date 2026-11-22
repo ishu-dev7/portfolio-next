@@ -20,7 +20,7 @@ import {
 export const SITE = {
   name: "Harendra Pratap Singh",
   title:
-    ".NET Full Stack Developer | Backend Specialist | AI Integration | SQL Server",
+    "AI-Enabled .NET Full-Stack Developer | Angular | SQL Server | LLM Integration",
   location: "Indore, Madhya Pradesh, India",
   email: "jnvk.harendrasingh1951999@gmail.com",
   github: "https://github.com/ishu-dev7",
@@ -31,22 +31,23 @@ export const TYPING_LINES = [
   "Backend Specialist · .NET Core / C# / SQL Server",
   "Full Stack Developer · Angular / TypeScript",
   "AI Integration · LLMs, OCR, Azure OpenAI",
+  "Agentic Workflows · Prompt Engineering · Claude",
 ];
 
 // ── About section ──────────────────────────────────────────────────────────────
 
 export const ABOUT_HIGHLIGHTS = [
-  "Leading backend development and system architecture discussions",
-  "Managing three live enterprise applications in production",
-  "Delivered the organization's first AI and OCR integrations",
-  "Mentoring junior developers and supporting clients directly",
+  "Building enterprise SaaS with .NET, Angular and SQL Server",
+  "Integrating OpenAI, Azure OpenAI and other LLM APIs into business workflows",
+  "OCR-based document processing for stock statements and invoices",
+  "Code reviews, technical guidance and client support across project teams",
 ];
 
 // Static stats — no animated counters that could flicker to 0
 export const ABOUT_STATS: AboutStat[] = [
   { value: "3",  suffix: "",  label: "Years Experience",     color: "from-brand-purple to-brand-blue" },
   { value: "15", suffix: "+", label: "Enterprise Modules",   color: "from-brand-blue to-indigo-400" },
-  { value: "3",  suffix: "",  label: "Live Projects",        color: "from-brand-cyan to-brand-blue" },
+  { value: "2",  suffix: "",  label: "Enterprise Products",        color: "from-brand-cyan to-brand-blue" },
   { value: "5",  suffix: "+", label: "AI Integrations",      color: "from-emerald-400 to-brand-cyan" },
 ];
 
@@ -54,7 +55,7 @@ export const ABOUT_STATS: AboutStat[] = [
 export const ABOUT_COUNTERS: CounterItem[] = [
   { target: 3,  label: "Years Experience" },
   { target: 15, label: "Enterprise Modules" },
-  { target: 3,  label: "Live Projects" },
+  { target: 2,  label: "Enterprise Products" },
   { target: 5,  label: "AI Integrations" },
 ];
 
@@ -64,10 +65,10 @@ export const RECRUITER_SNAPSHOT: SnapshotRow[] = [
   { icon: "⏱",  label: "Experience",         value: "3 Years Professional" },
   { icon: "⚙",  label: "Primary Stack",       value: "C# · .NET Core · Angular · SQL Server" },
   { icon: "🏢",  label: "Current Role",        value: "Software Developer — Appstean Infotech" },
-  { icon: "🔑",  label: "Technical Ownership", value: "Backend · Production · Client Support · Optimization" },
-  { icon: "📦",  label: "Live Projects",       value: "3 Enterprise Applications in Production" },
-  { icon: "🤖",  label: "AI Work",             value: "LLM Insights · OCR Automation · Azure OpenAI" },
-  { icon: "☁",  label: "Cloud",               value: "Microsoft Azure · App Service · IIS" },
+  { icon: "🔑",  label: "Technical Ownership", value: "End-to-End Module Delivery · Production Support · Optimization" },
+  { icon: "📦",  label: "Live Projects",       value: "Enterprise SaaS — Salestrip SFA · Arriba HRMS" },
+  { icon: "🤖",  label: "AI Work",             value: "LLM Insights · OCR · Agentic Workflows · Azure OpenAI" },
+  { icon: "☁",  label: "Cloud",               value: "Microsoft Azure · REST APIs · Deployment" },
   { icon: "📍",  label: "Location",            value: "Indore, India — Open to Remote / Hybrid" },
   { icon: "🎯",  label: "Open To",             value: ".NET · Full Stack · Backend · Azure · AI Roles" },
 ];
@@ -116,13 +117,15 @@ export const SKILLS: SkillCategory[] = [
     skills: [
       { name: "Azure OpenAI / OpenAI API",       level: 82 },
       { name: "Prompt Engineering",              level: 85 },
-      { name: "OCR / Vision Processing",         level: 78 },
-      { name: "LLM Report Integration",          level: 80 },
+      { name: "OCR / Intelligent Doc Processing", level: 78 },
+      { name: "AI Agents / Agentic Workflows",   level: 70 },
+      { name: "AI-Powered Business Insights",    level: 80 },
     ],
   },
   {
     title: "Tools",
     skills: [
+      { name: "Claude (AI-assisted development)", level: 90 },
       { name: "Visual Studio / VS Code",         level: 95 },
       { name: "SSMS / Postman / Swagger",        level: 90 },
       { name: "Jira / Azure Boards",             level: 72 },
@@ -138,24 +141,25 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: "Software Developer",
     org: "Appstean Infotech Pvt. Ltd. · Indore, Madhya Pradesh, India",
     points: [
-      "Own backend development across two enterprise SaaS applications used in production by multiple client organizations, handling feature delivery, production deployments, and live issue resolution.",
-      "Design and implement RESTful APIs with .NET Core, applying clean architecture principles, dependency injection, JWT authentication, and middleware pipelines.",
-      "Led migration of legacy .NET Framework APIs to .NET Core, improving maintainability and enabling modern features across the platform.",
-      "Optimize SQL Server performance through execution plan analysis, strategic indexing, stored procedure tuning, and deadlock investigation — measurably reducing API response times.",
-      "Integrated Azure OpenAI into the reporting workflow, delivering the organization's first production LLM feature: natural-language sales analysis over real business data.",
-      "Built OCR-based automation using Azure OpenAI Vision to extract product and quantity data from uploaded stock statement images, eliminating manual data entry.",
-      "Delivered SAP integration connecting enterprise client data to the platform, coordinating technical requirements with client stakeholders.",
-      "Take on technical lead responsibilities: conducting code reviews, providing technical guidance, mentoring junior developers, and supporting clients directly on production issues.",
-      "Manage reporting workflows including dynamic SQL generation, Crystal Reports integration, and PDF/Excel export pipelines.",
+      "Develop and maintain enterprise SaaS applications using .NET, C#, Angular and SQL Server.",
+      "Design and implement REST APIs and integrate third-party services to support business workflows.",
+      "Contribute to AI-enabled product capabilities using OpenAI API, Azure OpenAI and other LLM APIs, including prompt engineering and application-level LLM integration.",
+      "Work on AI-powered business insights for sales, expense, stock and employee-related data, including comparative and trend-oriented analysis.",
+      "Contribute to OCR-based document-processing workflows for extracting product-wise information from stock statements and invoices, with data mapping and validation.",
+      "Explore and implement AI-agent / agentic workflow capabilities for business-process automation and intelligent application features.",
+      "Optimize SQL queries, investigate and resolve database deadlocks, and improve backend performance.",
+      "Own end-to-end module delivery across requirement analysis, development, testing, deployment, UAT and production support.",
+      "Provide technical guidance, code reviews, client support and production issue resolution across project teams.",
+      "Develop automation utilities, including dynamic stock-statement generation and other business workflow improvements.",
     ],
   },
   {
     date: "JUN 2023 — DEC 2023",
-    role: "Software Developer Intern",
-    org: "YPSILON IT Solution",
+    role: "Java Intern",
+    org: "YPSILON IT Solution · Katni, Madhya Pradesh",
     points: [
-      "Built features for a Hospital Management System using Java and SQL, gaining first exposure to production-adjacent development.",
-      "Worked across data modeling, business logic implementation, and query writing in a structured software team.",
+      "Worked with Core Java, Advanced Java and SQL development concepts.",
+      "Developed sample projects, including a Hospital Management System, and participated in requirement analysis and technical discussions.",
     ],
   },
 ];
@@ -172,15 +176,15 @@ export const PROJECTS: ProjectItem[] = [
       "Enterprise pharmaceutical field-sales platform serving thousands of sales reps across multiple client organizations — covering the complete field-sales workflow.",
     problem:
       "Pharmaceutical companies needed a centralized platform to manage field sales operations: tour planning, expense approvals, doctor visits, stock tracking, and reporting — across large distributed teams.",
-    role: "Backend Lead / Full Stack Developer",
-    tech: ".NET Core, Angular 15, SQL Server, DevExtreme, Azure",
+    role: "Full Stack Developer",
+    tech: ".NET Core, Angular, SQL Server, DevExtreme, Azure",
     features: ["Tour Planning", "Expense Management", "Doctor Visit Tracking", "Attendance", "Stock Statement", "Approvals", "AI-Powered Reports"],
     contribution:
-      "Owned REST API design, SQL performance optimization, .NET Framework → .NET Core migration, production deployments, AI reporting integration, and client technical support.",
+      "Built enterprise sales workflows, scheduling and reporting; implemented REST APIs and backend modules, optimized SQL queries, supported client-specific customizations, and contributed to AI-enabled analysis of sales, expense and stock data.",
     highlights: [
       "Reduced API response times by rewriting slow SQL queries, restructuring indexes, and eliminating N+1 patterns identified through execution plan analysis.",
       "Delivered the organization's first production LLM feature — Azure OpenAI-powered natural-language sales insights embedded directly in the reporting module.",
-      "Led .NET Framework to .NET Core migration across multiple modules, improving startup performance and enabling modern middleware patterns.",
+      "Contributed AI-enabled analysis of sales, expense and stock data, surfacing contextual business insights.",
       "Resolved a multi-table deadlock in production by analyzing SQL Server deadlock graphs, redesigning transaction boundaries, and adding covering indexes.",
     ],
     impact:
@@ -267,10 +271,10 @@ export const PROJECTS: ProjectItem[] = [
     problem:
       "Business teams constantly requested new report variations from developers. Each report required a separate implementation cycle, creating a bottleneck and slowing business decisions.",
     role: "Backend Developer / Tooling",
-    tech: ".NET Core, SQL Server, Crystal Reports, Angular",
+    tech: ".NET Core, SQL Server, Angular",
     features: ["User-Defined Filters", "Custom Column Selection", "Dynamic SQL Generation", "PDF Export", "Excel Export", "Parameterized Queries"],
     contribution:
-      "Designed the dynamic SQL generation engine, parameterized query builder (preventing SQL injection), Crystal Reports integration, and multi-format export pipeline.",
+      "Designed the dynamic SQL generation engine, parameterized query builder (preventing SQL injection), and multi-format export pipeline.",
     highlights: [
       "Built a safe dynamic SQL generator supporting complex multi-table joins from user-configured column/filter selections — using parameterized queries throughout to prevent injection.",
       "Implemented PDF and Excel export with custom formatting, headers, and pagination that adapts to the dynamically defined structure.",
@@ -278,7 +282,7 @@ export const PROJECTS: ProjectItem[] = [
     ],
     impact:
       "Eliminated the reporting development backlog and gave business teams self-service reporting capability, freeing developer time for higher-value work.",
-    stack: ".NET Core · SQL Server · Crystal Reports",
+    stack: ".NET Core · SQL Server · Angular",
   },
 ];
 
@@ -294,7 +298,7 @@ export const ARCHITECTURE_FLOWS: ArchFlow[] = [
       { label: "Angular SPA", sub: "TypeScript · DevExtreme · Material" },
       { label: "ASP.NET Core API", sub: "REST · JWT · Middleware", highlight: true },
       { label: "Business Logic Layer", sub: "Services · Validators · DI" },
-      { label: "Data Access Layer", sub: "Dapper · Stored Procedures" },
+      { label: "Data Access Layer", sub: "Data Access · Stored Procedures" },
       { label: "SQL Server", sub: "T-SQL · Views · Indexes" },
     ],
   },
@@ -358,7 +362,7 @@ export const ENGINEERING_DECISIONS: EngineeringDecisionItem[] = [
     category: "Database",
     question: "How were SQL Server performance issues diagnosed and resolved?",
     answer:
-      "Using SQL Server Management Studio's execution plan analyzer to identify missing indexes, key lookups, and table scans. Added covering indexes for high-frequency API queries, rewrote correlated subqueries as JOINs, and eliminated N+1 patterns in Dapper by switching to explicit Includes or raw SQL where needed. Measured before/after using SET STATISTICS TIME.",
+      "Using SQL Server Management Studio's execution plan analyzer to identify missing indexes, key lookups, and table scans. Added covering indexes for high-frequency API queries, rewrote correlated subqueries as JOINs, and eliminated N+1 patterns by switching to explicit joins or raw SQL where needed. Measured before/after using SET STATISTICS TIME.",
     tags: ["SQL Server", "Performance", "Indexing", "Execution Plans"],
   },
   {
@@ -411,34 +415,35 @@ export const ENGINEERING_IMPACT: EngineeringImpactItem[] = [
   // Performance
   { category: "Performance", title: "SQL Execution Plan Analysis", description: "Diagnosed slow queries using SSMS execution plan analyzer; added covering indexes and rewrote subqueries — measurably reducing API response times in production." },
   { category: "Performance", title: "Deadlock Resolution", description: "Identified and resolved a production multi-table deadlock by analyzing deadlock graphs, standardizing lock order, and restructuring the transaction boundary." },
-  { category: "Performance", title: "Dapper Query Optimization", description: "Eliminated N+1 query patterns by converting to explicit joins and raw SQL where ORM overhead was measurable." },
+  { category: "Performance", title: "Query Optimization", description: "Eliminated N+1 query patterns by converting to explicit joins and raw SQL where ORM overhead was measurable." },
   // Modernization
-  { category: "Modernization", title: ".NET Framework → .NET Core Migration", description: "Led incremental migration of legacy API modules to .NET Core, enabling modern middleware, better performance, and cross-platform deployment capability." },
+  { category: "Modernization", title: "Automation Utilities", description: "Built automation utilities including dynamic stock-statement generation and other business workflow improvements." },
   { category: "Modernization", title: "Dynamic Reporting Engine", description: "Built a self-service reporting tool eliminating developer bottleneck — business users configure their own reports without code changes." },
   // AI
   { category: "AI", title: "LLM-Powered Sales Insights", description: "Integrated Azure OpenAI into the reporting workflow — first production AI feature at Appstean Infotech, enabling natural-language analysis of real sales data." },
-  { category: "AI", title: "OCR Stock Statement Automation", description: "Built end-to-end OCR pipeline using Azure OpenAI Vision, eliminating manual stock data entry for field sales reps." },
+  { category: "AI", title: "OCR Stock Statement Automation", description: "Contributed to OCR-based extraction of product-wise data from stock statements and invoices, with data mapping and validation." },
+  { category: "AI", title: "Agentic Workflows", description: "Exploring and implementing AI-agent workflows for business-process automation and intelligent application features." },
   // Production
-  { category: "Production", title: "Live Production Ownership", description: "Sole backend owner for two enterprise SaaS applications, handling feature delivery, production deployments, and live issue resolution." },
-  { category: "Production", title: "SAP Integration", description: "Delivered a successful SAP integration for an enterprise client, coordinating technical requirements across both systems." },
+  { category: "Production", title: "End-to-End Module Delivery", description: "Own modules across requirement analysis, development, testing, deployment, UAT and production support." },
+  { category: "Production", title: "Third-Party Integrations", description: "Designed REST APIs and integrated third-party services to support business workflows." },
   { category: "Production", title: "Client Technical Support", description: "Direct technical point of contact for production issues — diagnosing, resolving, and communicating fixes to enterprise client stakeholders." },
   // Leadership
-  { category: "Leadership", title: "Technical Guidance & Mentoring", description: "Providing architectural direction, code reviews, and hands-on mentoring for junior developers on the team." },
-  { category: "Leadership", title: "Star Performer Recognition", description: "Recognized as Star Performer of the Year (2025) for consistent delivery and technical ownership across multiple concurrent projects." },
+  { category: "Leadership", title: "Technical Guidance & Code Reviews", description: "Providing technical guidance, code reviews and issue resolution across project teams." },
+  { category: "Leadership", title: "Star Performer Recognition", description: "Star Performer of the Year (2025–2026) for outstanding contribution and performance in enterprise product development." },
 ];
 
 // ── Achievements ──────────────────────────────────────────────────────────────
 
 export const ACHIEVEMENTS: AchievementItem[] = [
-  { icon: "★", title: "Star Performer of the Year", description: "Recognized for consistent delivery and technical ownership — Appstean Infotech 2025." },
+  { icon: "★", title: "Star Performer of the Year", description: "Recognized for outstanding contribution and performance in enterprise product development — Appstean Infotech 2025–2026." },
   { icon: "🏅", title: "Notable New Comer Award", description: "Awarded for exceptional ramp-up speed and early impact in the first year — Appstean Infotech 2024." },
   { icon: "✓", title: "Multiple Client Appreciations", description: "Direct recognition from enterprise client stakeholders for outstanding support, delivery, and communication." },
   { icon: "◆", title: "First AI Integration Delivered", description: "Delivered the organization's first production AI feature — LLM-powered sales reporting insights on real business data." },
-  { icon: "⬡", title: "Multi-Project Ownership", description: "Managed two enterprise SaaS applications concurrently while leading feature delivery across both." },
+  { icon: "⬡", title: "Multi-Project Delivery", description: "Delivered modules across two enterprise SaaS applications — Salestrip SFA and Arriba HRMS." },
   { icon: "⚡", title: "SQL Performance Optimization", description: "Measurably reduced API response times through advanced query tuning, index optimization, and deadlock resolution." },
   { icon: "▲", title: "Production Deployments", description: "Successfully owned and executed multiple live production releases with full rollback planning and zero critical incidents." },
-  { icon: "◎", title: "Mentored Junior Developers", description: "Guided developers through onboarding, code reviews, and end-to-end feature delivery in a production codebase." },
-  { icon: "■", title: "SAP Integration Success", description: "Delivered a successful SAP integration for an enterprise client within tight timelines and complex technical requirements." },
+  { icon: "◎", title: "Code Reviews & Guidance", description: "Technical guidance, code reviews and production issue resolution across project teams." },
+  { icon: "■", title: "Client Customizations On Time", description: "Received client appreciation for delivering customizations and business solutions within committed timelines." },
 ];
 
 // ── Expertise topics ──────────────────────────────────────────────────────────
@@ -520,9 +525,9 @@ export const STATS: StatItem[] = [
   { target: 3,  label: "Years Experience" },
   { target: 15, label: "Technologies in Stack" },
   { target: 15, label: "Modules Delivered" },
-  { target: 3,  label: "Live Enterprise Projects" },
+  { target: 2,  label: "Enterprise SaaS Products" },
   { target: 5,  label: "AI Features Delivered" },
-  { target: 8,  label: "Developers Mentored" },
+  { target: 2,  label: "Awards & Recognitions" },
 ];
 
 // ── Navigation ────────────────────────────────────────────────────────────────

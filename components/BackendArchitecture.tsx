@@ -26,7 +26,7 @@ const NODES: ArchNode[] = [
   { id: "sql",    label: "SQL Server",   sub: "T-SQL · Procs",   fx: 0.93, fy: 0.22, color: "#0E7490", r: 24 },
   { id: "azure",  label: "Azure",        sub: "App Service",     fx: 0.93, fy: 0.52, color: "#5B8DB8", r: 22 },
   { id: "llm",    label: "OpenAI",       sub: "LLM · OCR",       fx: 0.73, fy: 0.68, color: "#15803D", r: 22 },
-  { id: "sap",    label: "SAP",          sub: "Integration",     fx: 0.55, fy: 0.60, color: "#B8794A", r: 20 },
+  { id: "sap",    label: "3rd-Party",    sub: "API Integration",   fx: 0.55, fy: 0.60, color: "#B8794A", r: 20 },
   { id: "auth",   label: "JWT Auth",     sub: "Middleware",      fx: 0.55, fy: 0.38, color: "#64748B", r: 18 },
 ];
 
